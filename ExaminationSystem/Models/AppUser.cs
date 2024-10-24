@@ -2,9 +2,9 @@
 
 namespace ExaminationSystem.Models
 {
-    public class AppUser
-    {
-        public int Id { get; set; }
+	public class AppUser
+	{
+		public int Id { get; set; }
 
 		[Required(ErrorMessage = "Username is required.")]
 		[RegularExpression("^[a-zA-Z]+$", ErrorMessage = "Username must contain only letters.")]

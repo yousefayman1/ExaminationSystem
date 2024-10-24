@@ -11,8 +11,6 @@ namespace ExaminationSystem.Interfaces
         IRepo<Question> questions { get; }
         IRepo<Answer> answers { get; }
         IRepo<Exam> exams { get; }
-        IRepo<ExamQuestion> examQuestions { get; }
-        
         Task<int> complete();
 
     }

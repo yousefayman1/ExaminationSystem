@@ -1,15 +1,10 @@
 ﻿using ExaminationSystem.DTOs;
 using ExaminationSystem.Interfaces;
 using ExaminationSystem.Models;
-using ExaminationSystem.ViewModel;
-using Humanizer;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 
 namespace ExaminationSystem.Controllers
 {
-    //[Area("Admin")]
     public class AnswerController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -36,7 +31,6 @@ namespace ExaminationSystem.Controllers
             return View(dto);
         }
         [HttpGet]
-        // GET: QuestionController/Create
         public async Task<IActionResult> Create(int id)
         {
             var answers = await _unitOfWork.answers.GetAll(x => x.QuestionId == id);
@@ -50,7 +44,6 @@ namespace ExaminationSystem.Controllers
             return View(dto);
         }
 
-        // POST: QuestionController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(AnswerDto dto)

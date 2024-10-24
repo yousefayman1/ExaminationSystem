@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ExaminationSystem.Repositry
 {
-	public class Repositry<T>:IRepo<T> where T : class
+	public class Repositry<T> : IRepo<T> where T : class
 	{
 		private DbSet<T> _dbSet;
 		private readonly ApplicationDbContext _context;
@@ -20,7 +20,7 @@ namespace ExaminationSystem.Repositry
 		{
 			await _dbSet.AddRangeAsync(entity);
 			return entity;
-		}	
+		}
 
 		public async Task Delete(T entity)
 		{
@@ -67,7 +67,6 @@ namespace ExaminationSystem.Repositry
 		public async Task Update(T entity)
 		{
 			_dbSet.Update(entity);
-			//_context.Entry(entity).State = EntityState.Modified;
 		}
 	}
 }

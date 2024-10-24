@@ -8,7 +8,7 @@
 	<script src="/js/SelcetedAnswer.js"></script>
 </head>
 
-<h1>TakingExam</h1>
+<h1>Taking Exam</h1>
 
 <form method="post" asp-action="TakingExam">
 	<input type="hidden" id="examId" name="examId" value="@Model.FirstOrDefault()?.examId" />
@@ -37,7 +37,7 @@
 		<div class="ml-auto mr-sm-5">
 			<input type="hidden" id="selectedAnswers" name="selectedAnswers">
 			
-			<button onclick="submitAnswers()" class="btn btn-success">Submit</button>
+			<button onclick="submitAnswers()" class="btn btn-primary">Submit</button>
 		</div>
 	</div>
 </form>	

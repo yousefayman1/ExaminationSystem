@@ -16,13 +16,10 @@ namespace ExaminationSystem
 			modelBuilder.Entity<Exam>()
 				.HasMany(e => e.Questions)
 				.WithMany(e => e.Exams);
-			//modelBuilder.Entity<ExamQuestion>().HasNoKey();
-			//modelBuilder.Entity<ExamQuestion>().ToTable("ExamQuestions");
 		}
 		public DbSet<Question> Questions { get; set; }
 		public DbSet<Answer> Answers { get; set; }
 		public DbSet<Exam> Exams { get; set; }
-		//public DbSet<ExamQuestion> ExamQuestions { get; set; }
 
 	}
 }

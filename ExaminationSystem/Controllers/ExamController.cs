@@ -1,11 +1,8 @@
 ﻿using ExaminationSystem.DTOs;
 using ExaminationSystem.Interfaces;
 using ExaminationSystem.Models;
-using ExaminationSystem.ViewModel;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace ExaminationSystem.Controllers
 {
@@ -19,7 +16,6 @@ namespace ExaminationSystem.Controllers
 			_unitOfWork = unitOfWork;
 			_context = context;
 		}
-		// GET: QuestionController
 		public async Task<IActionResult> Index()
 		{
 			var models = await _unitOfWork.exams.GetAll();
@@ -29,14 +25,11 @@ namespace ExaminationSystem.Controllers
 			}
 			return View(models);
 		}
-
-		// GET: QuestionController/Create
 		public async Task<IActionResult> Create()
 		{
 			return View();
 		}
 
-		// POST: QuestionController/Create
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Create(Exam model)
@@ -82,7 +75,7 @@ namespace ExaminationSystem.Controllers
 		}
 		[HttpPost]
 
-		public async Task<IActionResult> TakingExam(int examId,string selectedAnswers)
+		public async Task<IActionResult> TakingExam(int examId, string selectedAnswers)
 		{
 			int total = 0;
 			foreach (var item in selectedAnswers.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
@@ -99,72 +92,6 @@ namespace ExaminationSystem.Controllers
 			await _unitOfWork.exams.Update(exam);
 			await _unitOfWork.complete();
 			return RedirectToAction("Index");
-		}
-
-		// GET: QuestionController/Edit/5
-		public async Task<IActionResult> Edit(int id)
-		{
-			var model = await _unitOfWork.questions.GetById(x => x.Id == id);
-			if (model == null)
-			{
-				return NotFound();
-			}
-			return View(model);
-		}
-
-		// POST: QuestionController/Edit/5
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Edit(Question model)
-		{
-			try
-			{
-				if (ModelState.IsValid)
-				{
-					await _unitOfWork.questions.Update(model);
-					await _unitOfWork.complete();
-					return RedirectToAction(nameof(Index));
-				}
-
-				return View(model);
-			}
-			catch
-			{
-				return View();
-			}
-		}
-
-		// GET: QuestionController/Delete/5
-		public async Task<IActionResult> Delete(int id)
-		{
-			var model = await _unitOfWork.questions.GetById(x => x.Id == id);
-			if (model == null)
-			{
-				return NotFound();
-			}
-			return View(model);
-		}
-
-		// POST: QuestionController/Delete/5
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Delete(Question model)
-		{
-			try
-			{
-				if (ModelState.IsValid)
-				{
-					await _unitOfWork.questions.Update(model);
-					await _unitOfWork.complete();
-					return RedirectToAction(nameof(Index));
-				}
-
-				return View(model);
-			}
-			catch
-			{
-				return View();
-			}
 		}
 	}
 }
