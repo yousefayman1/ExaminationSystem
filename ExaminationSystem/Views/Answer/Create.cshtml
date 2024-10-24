@@ -1,0 +1,70 @@
+﻿@model AnswerDto
+
+@{
+	ViewData["Title"] = "Create";
+}
+
+<h1>Create New Answer</h1>
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form id="myForm" asp-action="Create" method="post">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="answer" class="control-label"></label>
+				<input asp-for="answer" class="form-control" />
+				<span asp-validation-for="answer" class="text-danger"></span>
+			</div>
+			<div class="form-group form-check">
+				<label class="form-check-label">
+					<input id="inputField" class="form-check-input" asp-for="isTrue" /> @Html.DisplayNameFor(model => model.isTrue)
+				</label>
+			</div>
+			<input hidden asp-for="questionId" />
+			<div class="form-group">
+				<button type="submit" id="buttonCheck" value="Create" class="btn btn-primary">Create</button>
+				@* <button class="btn btn-primary" id="buttonCheck"><a style="text-decoration:none;color:white" href="/Answer/Create/@Model">Create</a></button> *@
+			</div>
+			<span style="color:red" id="errorMessage" class="error">Error: The last answer must be true because there is no of answers submited before is true</span>
+		</form>
+	</div>
+</div>
+
+<div>
+	<a asp-action="Index">Back to List</a>
+</div>
+
+<script>
+	const checkBox = document.getElementById("inputField");
+	const errorMessage = document.getElementById("errorMessage");
+	const buttonCheck = document.getElementById("buttonCheck");
+	checkBox.addEventListener("click", function () {
+		if (checkBox.checked) {
+			errorMessage.style.visibility = "hidden";
+			buttonCheck.style.visibility = "visible";
+		} else {
+			errorMessage.style.visibility = "visible";
+			buttonCheck.style.visibility = "hidden";
+		}
+	});
+	function checkCount() {
+
+		if (@Model.answers.Count()== 4) {
+			if (@Model.answers.Any(x => x.isTrue == true).ToString().ToLower()) {
+				buttonCheck.style.visibility = "visible";
+				errorMessage.style.visibility = "hidden";
+			} else {
+				buttonCheck.style.visibility = "hidden";
+				errorMessage.style.visibility = "visible";
+			}
+		} else {
+			errorMessage.style.visibility = "hidden";
+		}
+	}
+	checkCount();
+</script>
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

@@ -1,0 +1,56 @@
+﻿@model AnswerQuestionDto
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<h1>List of Answers</h1>
+<p>
+	<a id="newQuestion" href="/Answer/Create/@Model.questionId">Create New Answer for this question</a>
+</p>
+<table class="table table-striped table-bordered">
+	<thead>
+		<tr>
+			<th>
+				Answer text
+			</th>
+			<th>
+				Is True
+			</th>
+			<th>
+				Questions
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.answersQuestion)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.AnswerDescription)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.isTrue)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Question.QuestionTitle)
+				</td>
+				<td>
+					<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+					<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+<script>
+	const link = document.getElementById("newQuestion");
+	function checkCount() {
+		if (@Model.answersQuestion.Count()>= 5) {
+			link.style.visibility = "hidden";
+		}
+	}
+	checkCount();
+
+</script>
