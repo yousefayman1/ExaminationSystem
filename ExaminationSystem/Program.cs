@@ -1,5 +1,7 @@
-using ExaminationSystem.Interfaces;
-using ExaminationSystem.Repositry;
+
+using BusinessLogicLayer;
+using BusinessLogicLayer.Repositry;
+using DataAccessLayer.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace ExaminationSystem

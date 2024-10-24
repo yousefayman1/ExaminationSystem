@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Linq;
-using ExaminationSystem.Interfaces;
+﻿using System.Linq.Expressions;
+using DataAccessLayer.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace ExaminationSystem.Repositry
+namespace BusinessLogicLayer.Repositry
 {
 	public class Repositry<T> : IRepo<T> where T : class
 	{

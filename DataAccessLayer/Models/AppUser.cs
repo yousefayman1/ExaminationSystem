@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ExaminationSystem.Models
+namespace DataAccessLayer.Models
 {
 	public class AppUser
 	{

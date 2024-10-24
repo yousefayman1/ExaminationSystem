@@ -1,6 +1,7 @@
-﻿using ExaminationSystem.DTOs;
-using ExaminationSystem.Interfaces;
-using ExaminationSystem.Models;
+﻿using BusinessLogicLayer;
+using DataAccessLayer.DTOs;
+using DataAccessLayer.Interfaces;
+using DataAccessLayer.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

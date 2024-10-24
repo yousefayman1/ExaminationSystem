@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ExaminationSystem.Models.Exam>
+﻿@model IEnumerable<Exam>
 
 @{
 	ViewData["Title"] = "Index";
@@ -32,7 +32,7 @@
 					@Html.DisplayFor(modelItem => item.ExamDateTime)
 				</td>
 				<td>
-					@Html.DisplayFor(modelItem => item.Grade)
+					@Html.DisplayFor(modelItem => item.Grade) / 50
 				</td>
 
 			</tr>

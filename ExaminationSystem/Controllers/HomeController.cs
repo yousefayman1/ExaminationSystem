@@ -1,4 +1,4 @@
-using ExaminationSystem.Models;
+using DataAccessLayer.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

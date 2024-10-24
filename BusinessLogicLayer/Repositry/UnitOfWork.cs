@@ -1,9 +1,9 @@
-﻿using ExaminationSystem.Interfaces;
-using ExaminationSystem.Models;
-using ExaminationSystem.Repositry;
+﻿using DataAccessLayer.Interfaces;
+using DataAccessLayer.Models;
 
 
-namespace ExaminationSystem.Repositry
+
+namespace BusinessLogicLayer.Repositry
 {
 	public class UnitOfWork : IUnitOfWork
 	{

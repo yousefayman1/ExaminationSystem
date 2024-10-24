@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.Extensions.Hosting;
 
-namespace ExaminationSystem.Models
+namespace DataAccessLayer.Models
 {
 	public class Question
 	{

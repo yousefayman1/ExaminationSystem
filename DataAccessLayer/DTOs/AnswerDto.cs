@@ -1,7 +1,7 @@
-﻿using ExaminationSystem.Models;
+﻿using DataAccessLayer.Models;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
-namespace ExaminationSystem.DTOs
+namespace DataAccessLayer.DTOs
 {
 	public class AnswerDto
 	{

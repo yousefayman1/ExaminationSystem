@@ -1,6 +1,6 @@
-﻿using ExaminationSystem.Models;
+﻿using DataAccessLayer.Models;
 
-namespace ExaminationSystem.DTOs
+namespace DataAccessLayer.DTOs
 {
 	public class AnswerQuestionDto
 	{

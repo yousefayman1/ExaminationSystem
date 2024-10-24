@@ -1,9 +1,7 @@
-﻿
-using ExaminationSystem.Models;
+﻿using DataAccessLayer.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
 
-namespace ExaminationSystem
+namespace BusinessLogicLayer
 {
 	public class ApplicationDbContext : DbContext
 	{

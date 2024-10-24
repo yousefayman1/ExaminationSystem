@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace ExaminationSystem.Interfaces
+namespace DataAccessLayer.Interfaces
 {
 	public interface IRepo<T> where T : class
 	{

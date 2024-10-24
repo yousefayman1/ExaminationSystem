@@ -1,5 +1,6 @@
-﻿using ExaminationSystem.Interfaces;
-using ExaminationSystem.Models;
+﻿
+using DataAccessLayer.Interfaces;
+using DataAccessLayer.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

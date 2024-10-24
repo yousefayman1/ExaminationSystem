@@ -1,10 +1,6 @@
-﻿
+﻿using DataAccessLayer.Models;
 
-using ExaminationSystem.Interfaces;
-using ExaminationSystem.Models;
-using ExaminationSystem.Repositry;
-
-namespace ExaminationSystem.Interfaces
+namespace DataAccessLayer.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {

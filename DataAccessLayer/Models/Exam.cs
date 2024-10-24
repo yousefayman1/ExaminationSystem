@@ -1,4 +1,4 @@
-﻿namespace ExaminationSystem.Models
+﻿namespace DataAccessLayer.Models
 {
 	public class Exam
 	{

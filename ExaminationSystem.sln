@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExaminationSystem", "Examin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{1616DFC7-E900-4251-8E2F-A4ED4172D164}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{36F48C06-DED8-44E2-986A-256225E4F30E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1616DFC7-E900-4251-8E2F-A4ED4172D164}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1616DFC7-E900-4251-8E2F-A4ED4172D164}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1616DFC7-E900-4251-8E2F-A4ED4172D164}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36F48C06-DED8-44E2-986A-256225E4F30E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36F48C06-DED8-44E2-986A-256225E4F30E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36F48C06-DED8-44E2-986A-256225E4F30E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36F48C06-DED8-44E2-986A-256225E4F30E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
-using Microsoft.Build.Framework;
+using System.ComponentModel.DataAnnotations;
 
-namespace ExaminationSystem.Models
+namespace DataAccessLayer.Models
 {
 	public class Answer
 	{
